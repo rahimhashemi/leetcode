@@ -210,6 +210,30 @@ class Solution {
 
     public int maxFrequencyElements(int[] nums) {
         int length = nums.length;
-        return length;
+        int left = 0;
+        int maxFrequency = 1;
+        int currentFrequency;
+        Map<Integer, Integer> hashMap = new HashMap<>();
+        while (left < length) {
+            if (hashMap.containsKey(nums[left])) {
+                currentFrequency = hashMap.get(nums[left]);
+                currentFrequency++;
+                hashMap.put(nums[left], currentFrequency);
+                if (currentFrequency > maxFrequency)
+                    maxFrequency = currentFrequency;
+            } else {
+                hashMap.put(nums[left], 1);
+            }
+            left++;
+        }
+
+        int occurrenceCount = 0;
+        for (Integer value : hashMap.values()) {
+            if (value == maxFrequency) {
+                occurrenceCount++;
+            }
+        }
+
+        return occurrenceCount * maxFrequency;
     }
 }

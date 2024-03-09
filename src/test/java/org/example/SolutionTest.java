@@ -135,19 +135,39 @@ class SolutionTest {
     void itShouldLongestConsecutive() {
         //given
         int[] inputArray = {7, 1, 5, 3, 6, 4};
-        int[] prices = {100,4,200,1,3,2};
-        int[] prices2 = {0,3,7,2,5,8,4,6,0,1};
-        int[] prices3 = {};
-        int[] prices4 = {1,2,0,1};
-        int[] prices5 = {1};
+        int[] inputArray1 = {100, 4, 200, 1, 3, 2};
+        int[] inputArray2 = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
+        int[] inputArray3 = {};
+        int[] inputArray4 = {1, 2, 0, 1};
+        int[] inputArray5 = {1};
         //when
-        int longestConsecutive = underTest.longestConsecutive(inputArray);
         //then
-        Assertions.assertEquals(5, longestConsecutive);
-        Assertions.assertEquals(4, underTest.longestConsecutive(prices));
-        Assertions.assertEquals(9, underTest.longestConsecutive(prices2));
-        Assertions.assertEquals(0, underTest.longestConsecutive(prices3));
-        Assertions.assertEquals(3, underTest.longestConsecutive(prices4));
-        Assertions.assertEquals(1, underTest.longestConsecutive(prices5));
+        Assertions.assertEquals(5, underTest.longestConsecutive(inputArray));
+        Assertions.assertEquals(4, underTest.longestConsecutive(inputArray1));
+        Assertions.assertEquals(9, underTest.longestConsecutive(inputArray2));
+        Assertions.assertEquals(0, underTest.longestConsecutive(inputArray3));
+        Assertions.assertEquals(3, underTest.longestConsecutive(inputArray4));
+        Assertions.assertEquals(1, underTest.longestConsecutive(inputArray5));
+    }
+
+    @Test
+    void itShouldMaxFrequencyElements() {
+        //given
+        int[] inputArray = {1,2,2,3,1,4};
+        int[] inputArray1 = {1,2,3,4,5};
+        int[] inputArray2 = {10,12,11,9,6,19,11};
+        int[] inputArray3 = {1,2,2,3,1,4,4};
+        int[] inputArray4 = {19,19,19,20,19,8,19};
+        int[] inputArray5 = {1};
+        //when
+        //then
+        Assertions.assertNotEquals(5, underTest.maxFrequencyElements(inputArray));
+        Assertions.assertEquals(4, underTest.maxFrequencyElements(inputArray));
+        Assertions.assertEquals(5, underTest.maxFrequencyElements(inputArray1));
+        Assertions.assertEquals(6, underTest.maxFrequencyElements(inputArray3));
+        Assertions.assertEquals(2, underTest.maxFrequencyElements(inputArray2));
+        Assertions.assertEquals(5, underTest.maxFrequencyElements(inputArray4));
+        Assertions.assertEquals(1, underTest.maxFrequencyElements(inputArray5));
+
     }
 }
