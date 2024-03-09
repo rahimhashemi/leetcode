@@ -78,17 +78,17 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldIsValidParentheses() {
+    void itShouldNotIsValidParentheses() {
         //given
         String s = "([)]";
         //when
         boolean validParentheses = underTest.isValidParentheses(s);
         //then
-        Assertions.assertTrue(validParentheses);
+        Assertions.assertFalse(validParentheses);
     }
 
     @Test
-    void itShouldIsValid() {
+    void itShouldIsValidParentheses() {
         //given
         String s = "[()]";
         //when
