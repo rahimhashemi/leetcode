@@ -236,4 +236,20 @@ class Solution {
 
         return occurrenceCount * maxFrequency;
     }
+
+    public int lastStoneWeight(int[] stones) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
+        for (int num : stones) {
+            heap.add(num);
+        }
+
+        while (heap.size() > 1) {
+            int lastValue = heap.poll();
+            int secondOfLastValue = heap.poll();
+
+            heap.add(lastValue - secondOfLastValue);
+        }
+
+        return heap.poll();
+    }
 }

@@ -15,7 +15,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldIsAnagram() {
+    void itShouldAnagram() {
         //given
         String s = "cat";
         String t = "tac";
@@ -26,7 +26,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldNotIsAnagram() {
+    void itShouldNotAnagram() {
         //given
         String s = "cac";
         String t = "tac";
@@ -48,7 +48,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldNotIsPalindrome() {
+    void itShouldNotPalindrome() {
         //given
         String s = "0P";
         //when
@@ -58,7 +58,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldNotIsPalindromeWithTwoPointer() {
+    void itShouldNotPalindromeWithTwoPointer() {
         //given
         String s = "0P";
         //when
@@ -68,7 +68,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldIsPalindromeWithTwoPointer() {
+    void itShouldPalindromeWithTwoPointer() {
         //given
         String s = "A man, a plan, a canal: Panama";
         //when
@@ -78,7 +78,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldNotIsValidParentheses() {
+    void itShouldNotValidParentheses() {
         //given
         String s = "([)]";
         //when
@@ -88,7 +88,7 @@ class SolutionTest {
     }
 
     @Test
-    void itShouldIsValidParentheses() {
+    void itShouldValidParentheses() {
         //given
         String s = "[()]";
         //when
@@ -123,12 +123,12 @@ class SolutionTest {
     void itShouldMaxProfit() {
         //given
         int[] inputArray = {7, 1, 5, 3, 6, 4};
-        int[] prices = {7, 6, 4, 3, 1};
+        int[] inputArray2 = {7, 6, 4, 3, 1};
         //when
         int maxProfit = underTest.maxProfit(inputArray);
         //then
         Assertions.assertEquals(5, maxProfit);
-        Assertions.assertEquals(0, underTest.maxProfit(prices));
+        Assertions.assertEquals(0, underTest.maxProfit(inputArray2));
     }
 
     @Test
@@ -153,11 +153,11 @@ class SolutionTest {
     @Test
     void itShouldMaxFrequencyElements() {
         //given
-        int[] inputArray = {1,2,2,3,1,4};
-        int[] inputArray1 = {1,2,3,4,5};
-        int[] inputArray2 = {10,12,11,9,6,19,11};
-        int[] inputArray3 = {1,2,2,3,1,4,4};
-        int[] inputArray4 = {19,19,19,20,19,8,19};
+        int[] inputArray = {1, 2, 2, 3, 1, 4};
+        int[] inputArray1 = {1, 2, 3, 4, 5};
+        int[] inputArray2 = {10, 12, 11, 9, 6, 19, 11};
+        int[] inputArray3 = {1, 2, 2, 3, 1, 4, 4};
+        int[] inputArray4 = {19, 19, 19, 20, 19, 8, 19};
         int[] inputArray5 = {1};
         //when
         //then
@@ -168,6 +168,20 @@ class SolutionTest {
         Assertions.assertEquals(2, underTest.maxFrequencyElements(inputArray2));
         Assertions.assertEquals(5, underTest.maxFrequencyElements(inputArray4));
         Assertions.assertEquals(1, underTest.maxFrequencyElements(inputArray5));
+
+    }
+
+    @Test
+    void itShouldLastStoneWeight() {
+        //given
+        int[] stones = {2, 7, 4, 1, 8, 1};
+        int[] stones1 = {1};
+        int[] stones2 = {2, 2};
+        //when
+        //then
+        Assertions.assertEquals(1, underTest.lastStoneWeight(stones));
+        Assertions.assertEquals(1, underTest.lastStoneWeight(stones1));
+        Assertions.assertEquals(0, underTest.lastStoneWeight(stones2));
 
     }
 }
